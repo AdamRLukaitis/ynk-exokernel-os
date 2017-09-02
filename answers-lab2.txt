@@ -1,0 +1,29 @@
+1) x  should be a uintptr_t type .
+
+
+
+2) 
+
+
+ENTRY							BASE VIRTUAL ADDRESS								POINTS TO 
+
+1023							0xffbfffff										    Points to the top 4 MB of physical memory
+1022							0xfbbfffff											Points to the second last 4 MB of physical memory
+1021							0xf7bfffff										    Points to the third last 4 MB of physical memory
+Continues in multiples of 4 MB
+
+
+3)The pages are protrected with protection bits . Each page has a protection level associated with it . The protection level may be supervisor or user . When executing in the user mode only user level pages are accessible while kernel level pages cannot be accessed .
+
+4)	The maximum memory that this operating system can support is 4GB because it uses 32 bit addressing scheme. (2^32 = 4GB)
+
+
+5) Managing memory overhead items
+ 
+ 		a) Page Directory
+ 		b) Page Table
+ 		c) Guard Page
+ 		d) Mapping of physical memory to virtual memory occours at multiples of 4 bytes , so there is usually a small Roundup value which is not used.
+
+6) The transition to an EIP  running above KERNBASE mark happens at the jump to the relocated function .  After the paging has been enabled by setting the flag in the CR0 register , the jump to the relocated function still runs in low address space , so as to take care of this condition the physical memory from 0-4MB is mapped to 0-4MB in virtual memory . 
+This transition is necessary because the kernel is linked at an high memory address above the 1MB mark. 

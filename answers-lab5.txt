@@ -1,0 +1,2 @@
+1) Nothing else has to be changed , because when the environments switch, the trapframe is saved and the trapframe contains the Eflags register value
+

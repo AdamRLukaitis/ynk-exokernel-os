@@ -1,0 +1,90 @@
++ ld obj/kern/kernel
++ mk obj/kern/kernel.img
+6828 decimal is 15254 octal!
+Physical memory: 66556K available, base = 640K, extended = 65532K
+boot_alloc value f0290000
+check_page_free_list() succeeded! 
+check_page_alloc() succeeded!
+check_page() succeeded!
+check_kern_pgdir() succeeded!
+check_page_free_list() succeeded! 
+check_page_installed_pgdir() succeeded!
+SMP: CPU 0 found 1 CPU(s)
+enabled interrupts: 1 2 4
+[00000000] new env 00001000
+[00000000] new env 00001001
+1001: I am ''
+FS is running
+FS can do I/O
+Device 1 presence: 1
+[00001001] new env 00001002
+block cache is good
+superblock is good
+bitmap is good
+alloc_block is good
+file_open is good
+file_get_block is good
+[00001001] new env 00001003
+1002: I am '0'
+[00001002] new env 00001004
+file_flush is good
+file_truncate is good
+[00001001] exiting gracefully
+[00001001] free env 00001001
+[00001002] new env 00002001
+1003: I am '1'
+[00001003] new env 00001005
+1004: I am '00'
+[00001004] new env 00001006
+file rewrite is good
+[00001003] new env 00001007
+[00001004] new env 00001008
+1005: I am '10'
+[00001005] new env 00001009
+1006: I am '000'
+[00001006] exiting gracefully
+[00001006] free env 00001006
+[00001002] exiting gracefully
+[00001002] free env 00001002
+2001: I am '01'
+[00002001] new env 00002002
+[00001005] new env 00002006
+1009: I am '100'
+[00001009] exiting gracefully
+[00001009] free env 00001009
+[00001003] exiting gracefully
+[00001003] free env 00001003
+[00002001] new env 00002003
+2002: I am '010'
+[00002002] exiting gracefully
+[00002002] free env 00002002
+[00001004] exiting gracefully
+[00001004] free env 00001004
+1007: I am '11'
+[00001007] new env 00002004
+1008: I am '001'
+[00001008] exiting gracefully
+[00001008] free env 00001008
+[00002001] exiting gracefully
+[00002001] free env 00002001
+2003: I am '011'
+[00002003] exiting gracefully
+[00002003] free env 00002003
+[00001007] new env 00003003
+2004: I am '110'
+[00002004] exiting gracefully
+[00002004] free env 00002004
+[00001005] exiting gracefully
+[00001005] free env 00001005
+2006: I am '101'
+[00002006] exiting gracefully
+[00002006] free env 00002006
+[00001007] exiting gracefully
+[00001007] free env 00001007
+3003: I am '111'
+[00003003] exiting gracefully
+[00003003] free env 00003003
+No runnable environments in the system!
+Welcome to the JOS kernel monitor!
+Type 'help' for a list of commands.
+qemu: terminating on signal 15 from pid 1736

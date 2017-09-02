@@ -1,0 +1,13 @@
+obj/fs/fs.asm:// in ipc->read.req_fileid.  Return the bytes read from the file to
+obj/fs/fs.asm:// the caller in ipc->readRet, then update the seek position.  Returns
+obj/fs/fs.asm:// Stat ipc->stat.req_fileid.  Return the file's struct Stat to the
+obj/fs/fs.asm:// caller in ipc->statRet.
+fs/serv.c:// Read at most ipc->read.req_n bytes from the current seek position
+fs/serv.c:// in ipc->read.req_fileid.  Return the bytes read from the file to
+fs/serv.c:// the caller in ipc->readRet, then update the seek position.  Returns
+fs/serv.c:	struct Fsreq_read *req = &ipc->read;
+fs/serv.c:	struct Fsret_read *ret = &ipc->readRet;
+fs/serv.c:// Stat ipc->stat.req_fileid.  Return the file's struct Stat to the
+fs/serv.c:// caller in ipc->statRet.
+fs/serv.c:	struct Fsreq_stat *req = &ipc->stat;
+fs/serv.c:	struct Fsret_stat *ret = &ipc->statRet;

@@ -1,0 +1,11 @@
+1) The MPBOOTPHYS macro is required because the processor startup code is linked at high address but loaded at 0x7000. 
+It is not in boot.S because the linker and loader at the same low range of addresses.
+If MPBOOTPHYS is elminated in mpentry.S its code would not find the symbols like .global
+
+2)We need different Kernel stacks per CPU to allow any CPU to service interrupts, otherwise if there is only one stack , if 2 simeltaneous interrupts occour on different CPU's then the single kernel stack will be corrupted.
+
+3) The variable e is a pointer to an Environment which has its own page directory and therefore has a physical mapping. Therefore it can be referenced before and after the address switch.
+
+4)The old environment registers must be saved so that the environment can resume executing at the moment it was context switched.
+
+5)

@@ -1,0 +1,10 @@
+1) The purpose of having an induvidial exception or interrupt is to prevent the user program from influencing what interrupt or exception is being raised.
+If all the interrupts were delivered to the same handler then we could not handle different types of interrupts or exceptions
+
+2)I did not have to change anything for user/softint program to run properly. Softint's code cannot cause interrupt $14 which is a page fault .This can only be invoked at ring 0 or when CPL = 0 . But softint runs in the user mode and cannot be running CPL = 0 therefore it raises a general protection fault which the grading script makes use of.
+
+3)In the Setgate function for breakpoint function i set the prevliege level to 3 , so that it can be executed by user level code. 
+If i had set it to 0 user level code cannot use breakpoints. (Otherwise it would raise a general protection fault)
+
+
+4) This mechanism allows the user level code to set breakpoints without interfering with the kernel memory. 

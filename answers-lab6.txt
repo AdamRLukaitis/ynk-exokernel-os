@@ -1,0 +1,9 @@
+1) I implemented the transmit structure , by first initalizing the TDH and TDT registers, i also initialized the EN,PSP,CT,COLD bits in TCTL registers and set the TDBAL register to the physical address of the transmit descriptors, TDLEN is the length of the transmit descriptors.
+If the transmit descriptor is full then i do sched yeild of the CPU and repeat as long as the transmit descriptor is full.
+
+2) I implemented the recieve structure by initalizing the RA registers,MTAregisters and the RCTL registers , i also set the RDLEN and RDH and RDT registers to the appropriate recieve descriptors length address head and tail respectivley.
+If the recieve descriptor is empty then i add more descriptors from the software side.
+
+3)The web page served by JOS's web server says "Cheesy Web Page"
+
+4) It took me around 40 hours.
